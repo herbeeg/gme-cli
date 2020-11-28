@@ -1,11 +1,12 @@
-import click
 import pytest
+
+from click.testing import CliRunner
 
 from cli.main import default
 
 class TestMainCLI:
     def testMainOutput(self):
-        runner = click.CliRunner()
+        runner = CliRunner()
         result = runner.invoke(default)
 
         assert 0 == result.exit_code
